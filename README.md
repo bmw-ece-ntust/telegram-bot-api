@@ -54,4 +54,4 @@ Only weekday runs; weekends skipped.
 
 ## Persistence
 
-Server working dir: `/var/lib/telegram-bot-api` (uid/gid `101`).
+Server working dir: `/var/lib/telegram-bot-api`. Process runs as root.

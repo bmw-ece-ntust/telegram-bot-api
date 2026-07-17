@@ -1,9 +1,6 @@
 #!/usr/bin/env sh
 set -e
 
-USERNAME="telegram-bot-api"
-GROUPNAME="telegram-bot-api"
-
 COMMAND="telegram-bot-api"
 
 # Appends an argument to the COMMAND variable.
@@ -79,7 +76,6 @@ append_flag_from_env() {
 }
 
 check_required_env "TELEGRAM_WORK_DIR"
-chown "${USERNAME}:${GROUPNAME}" "${TELEGRAM_WORK_DIR}"
 
 # Telegram Bot API Server knows how to read the API ID and API Hash from a environment variable.
 # Is not needed to pass it as arguments.
@@ -91,8 +87,6 @@ file_env "TELEGRAM_API_HASH" "TELEGRAM_API_HASH_FILE"
 append_arg_from_env "TELEGRAM_WORK_DIR" "--dir"
 check_required_env "TELEGRAM_TEMP_DIR"
 append_arg_from_env "TELEGRAM_TEMP_DIR" "--temp-dir"
-append_args "--username=${USERNAME}"
-append_args "--groupname=${GROUPNAME}"
 
 check_required_env "TELEGRAM_API_ID"
 check_required_env "TELEGRAM_API_HASH"
